@@ -5,10 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
-//@RequestMapping("/employees") -URL Controller- URL for all RequestMapping Methods
+//@RequestMapping("/employees")// -URL Controller- URL for all RequestMapping Methods
 public class MyController {
 
     @RequestMapping("/")
