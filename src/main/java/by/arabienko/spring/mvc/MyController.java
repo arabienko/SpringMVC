@@ -11,7 +11,7 @@ public class MyController {
 
     @RequestMapping("/")
     public String showMyFirstView() {
-        System.out.println("method run");
+//        System.out.println("method run");
         return "firstView";
     }
 

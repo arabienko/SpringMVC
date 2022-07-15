@@ -16,6 +16,12 @@ Name: ${employee.name}
 Surname: ${employee.surname}
 <br>
 <br>
+Phone number: ${employee.numberPhone}
+<br>
+<br>
+E-mail: ${employee.email}
+<br>
+<br>
 Salary: ${employee.salary}
 <br>
 <br>

@@ -1,14 +1,25 @@
 package by.arabienko.spring.mvc.entity;
 
+import by.arabienko.spring.mvc.validation.CheckEmail;
+
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
 
+    @Size(min = 2, message = "must be not less than two symbols...")
     private String name;
 
+//    @NotNull(message = "field must be not empty... surname is required field.")
+//    @NotEmpty(message = "field must be not empty... surname is required field.")
+    @NotBlank(message = "field must be not empty... surname is required field.")  //equals @NotEmpty, but without spaces
     private String surname;
 
+    @Min(value = 500,
+            message = "salary must be more than 499...")
+    @Max(value = 1000,
+            message = "salary must be less than 1001...")
     private int salary;
 
     private String department;
@@ -16,6 +27,13 @@ public class Employee {
     private Map<String, String> departments;
 
     private String car;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}",
+            message = "please use pattern: xxx-xx-xx")
+    private String numberPhone;
+
+    @CheckEmail(value = "tut.by", message = "tut.by")
+    private String email;
 
     private Map<String, String> cars;
 
@@ -134,6 +152,24 @@ public class Employee {
     public void setLangMap(Map<String, String> langMap) {
         this.langMap = langMap;
     }
+
+
+    public String getNumberPhone() {
+        return numberPhone;
+    }
+
+    public void setNumberPhone(String numberPhone) {
+        this.numberPhone = numberPhone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
